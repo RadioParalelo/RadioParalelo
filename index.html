@@ -16,28 +16,29 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
+            overflow: hidden; /* Prevent overflow */
         }
 
         /* Header styling */
         h1 {
-            font-size: 48px;
+            font-size: 40px;
             color: #9e1b32; /* Dark Red */
             text-shadow: 2px 2px 5px #000; /* Dark shadow for contrast */
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         h3 {
-            font-size: 20px;
+            font-size: 18px;
             color: #1b5e20; /* Dark Green */
             text-shadow: 1px 1px 3px #000; /* Dark shadow for contrast */
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         /* Logo styling */
         .logo {
-            width: 180px;
-            margin: 20px auto;
+            width: 150px;
+            margin: 15px auto;
         }
 
         /* Links styling */
@@ -45,8 +46,8 @@
             display: inline-block;
             color: #fff; /* White text */
             text-decoration: none;
-            padding: 12px 24px;
-            margin: 5px;
+            padding: 8px 16px;
+            margin: 3px;
             border: 1px solid #333; /* Dark border */
             background-color: #1c1c1c; /* Dark background */
             border-radius: 4px;
@@ -54,13 +55,13 @@
         }
 
         .banner {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             border-color: #9e1b32; /* Dark red border */
         }
 
         .link {
-            font-size: 16px;
+            font-size: 14px;
             border-color: #1b5e20; /* Dark green border */
         }
 
@@ -76,12 +77,12 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .social-link {
-            font-size: 30px;
-            margin: 10px;
+            font-size: 26px;
+            margin: 5px;
             color: #fff; /* White text */
             transition: color 0.3s ease;
         }
@@ -91,17 +92,21 @@
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 15px;
+            font-size: 12px;
             color: #888;
         }
 
         /* Adaptive iframe styling */
         iframe {
             width: 100%; 
-            max-width: 480px; /* Maximum width for better scaling */
-            border: none;
-            margin-bottom: 20px;
+            max-width: 400px; /* Maximum width for better scaling */
+        }
+
+        /* Make the buttons smaller */
+        .link {
+            font-size: 12px;
+            padding: 6px 12px;
         }
     </style>
 </head>
@@ -114,7 +119,7 @@
         <img class="logo" src="https://raw.githubusercontent.com/RadioParalelo/RadioParalelo/refs/heads/main/web/RadioParalelo-BlackStar.png" alt="Rádio Paralelo Logo">
     </a>
     
-    <!-- Adaptive Audio Player (Iframe) -->
+    <!-- Audio Player (Iframe) -->
     <iframe src="https://radio.indymedia.pt/public/paralelo/embed?theme=dark" frameborder="0" allowtransparency="true"></iframe>
     
     <a class="banner" href="https://radio.indymedia.pt/public/paralelo/dj">Livestream + DJ</a>
@@ -126,8 +131,8 @@
     </div>
     
     <div>
-        <a class="link" href="https://radio.indymedia.pt/public/paralelo">Rádio Paralelo</a>
-        <a class="link" href="https://bafybeigmmevv7c3745j4jrdbbzbxkp7etilwtt2xvz42sreddjrhiauph4.ipfs.w3s.link">IPFS</a>
+        <a class="link" href="https://radio.indymedia.pt/login">Estúdio</a>
+        <!-- Removed IPFS link as iframe player doesn't work here -->
     </div>
     
     <!-- Social Links -->
