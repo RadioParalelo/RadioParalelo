@@ -1,100 +1,148 @@
-
-
-    Home
-    HTML
-    Try HTML 
-
-Result Size: 1074 x 828
-
-            margin-bottom: 20px;
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio Paralelo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background (black) */
+            color: #fff; /* Light text (white) */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
         }
 
+        /* Header styling */
+        h1 {
+            font-size: 48px;
+            color: #9e1b32; /* Dark Red */
+            text-shadow: 2px 2px 5px #000; /* Dark shadow for contrast */
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #1b5e20; /* Dark Green */
+            text-shadow: 1px 1px 3px #000; /* Dark shadow for contrast */
+            margin-bottom: 20px;
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 180px;
+            margin: 20px auto;
+        }
+
+        /* Links styling */
+        .link, .banner {
+            display: inline-block;
+            color: #fff; /* White text */
+            text-decoration: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border: 1px solid #333; /* Dark border */
+            background-color: #1c1c1c; /* Dark background */
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .banner {
+            font-size: 18px;
+            font-weight: bold;
+            border-color: #9e1b32; /* Dark red border */
+        }
+
+        .link {
+            font-size: 16px;
+            border-color: #1b5e20; /* Dark green border */
+        }
+
+        /* Hover effects */
+        .banner:hover, .link:hover {
+            background-color: #333; /* Dark background on hover */
+            color: #fff;
+            border-color: #fff; /* White border on hover */
+        }
+
+        /* Social icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            font-size: 30px;
+            margin: 10px;
+            color: #fff; /* White text */
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #9e1b32; /* Dark Red on hover */
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Adaptive iframe styling */
+        iframe {
+            width: 100%; 
+            max-width: 480px; /* Maximum width for better scaling */
+            border: none;
+            margin-bottom: 20px;
+        }
     </style>
-
 </head>
-
 <body>
 
-​
-
     <h1>Rádio Paralelo</h1>
-
     <h3>A partir montras desde 2016!</h3>
-
     
-
     <a href="/">
-
         <img class="logo" src="https://raw.githubusercontent.com/RadioParalelo/RadioParalelo/refs/heads/main/web/RadioParalelo-BlackStar.png" alt="Rádio Paralelo Logo">
-
     </a>
-
     
-
     <!-- Adaptive Audio Player (Iframe) -->
-
     <iframe src="https://radio.indymedia.pt/public/paralelo/embed?theme=dark" frameborder="0" allowtransparency="true"></iframe>
-
     
-
     <a class="banner" href="https://radio.indymedia.pt/public/paralelo/dj">Livestream + DJ</a>
-
     
-
     <div>
-
         <a class="link" href="https://radio.indymedia.pt/listen/paralelo/radio.mp3">MP3</a>
-
         <a class="link" href="https://radio.indymedia.pt/public/paralelo/playlist.m3u">M3U</a>
-
         <a class="link" href="https://radio.indymedia.pt/public/paralelo/playlist.pls">PLS</a>
-
     </div>
-
     
-
     <div>
-
         <a class="link" href="https://radio.indymedia.pt/public/paralelo">Rádio Paralelo</a>
-
         <a class="link" href="https://bafybeigmmevv7c3745j4jrdbbzbxkp7etilwtt2xvz42sreddjrhiauph4.ipfs.w3s.link">IPFS</a>
-
     </div>
-
     
-
     <!-- Social Links -->
-
     <div class="social-links">
-
         <a class="social-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=rss">🛜</a>
-
         <a class="social-link" href="https://kolektiva.social/@paralelo">🐘</a>
-
         <a class="social-link" href="https://t.me/s/radioparalelo">📲</a>
-
         <a class="social-link" href="https://archive.org/details/@r_dio_paralelo_porto">🏛️</a>
-
         <a class="social-link" href="https://www.facebook.com/RadioParalelo">📘</a>
-
         <a class="social-link" href="https://www.instagram.com/radioparalelo/">📸</a>
-
     </div>
-
-​
 
     <footer>
-
         <p>🄯 Rádio Paralelo ((( ⓘ ))) radio.indymedia.pt</p>
-
     </footer>
 
-​
-
 </body>
-
 </html>
-
-​
-
