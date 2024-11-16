@@ -100,30 +100,29 @@
 
         /* Make the buttons smaller */
         .link {
-            font-size: 12px;
+            font-size: 15px;
             padding: 6px 12px;
         }
    
-.rss-feed {
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 5px;
-}
+        .rss-feed {
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
 
-.rss-feed a {
-    color: #1b5e20;  /* Dark Red link color */
-    font-size: 16px;
-    text-decoration: none;
-}
+        .rss-feed a {
+            color: #1b5e20;  /* Dark Red link color */
+            font-size: 16px;
+            text-decoration: none;
+        }
 
-.rss-feed a:hover {
-    text-decoration: underline;
-    color: #fff;  /* Lighter red for hover effect */
-}
+        .rss-feed a:hover {
+            color: #fff;  /* Lighter red for hover effect */
+        }
 
-.rss-item {
-    margin-bottom: 10px;
-}
+        .rss-item {
+            margin-bottom: 10px;
+        }
 
     </style>
 </head>
@@ -142,14 +141,16 @@
     <a class="banner" href="https://radio.indymedia.pt/public/paralelo/dj">Livestream + DJ</a>
     
     <div>
-        <a class="link" href="https://radio.indymedia.pt/listen/paralelo/radio.mp3">MP3</a>
-        <a class="link" href="https://radio.indymedia.pt/public/paralelo/playlist.m3u">M3U</a>
-        <a class="link" href="https://radio.indymedia.pt/public/paralelo/playlist.pls">PLS</a>
+        <a class="link" href="https://radio.indymedia.pt/listen/paralelo/radio.mp3">MP3 Stream</a>
+        <a class="link" href="https://radio.indymedia.pt/radio.mp3.xspf">XSPF Playlist</a>
+      
     </div>
     
     <div>
         <a class="link" href="https://radio.indymedia.pt/login">Estúdio</a>
-        <!-- Removed IPFS link as iframe player doesn't work here -->
+        <a class="link" href="https://radio.indymedia.pt/public/paralelo/ondemand">On Demand</a>
+        <a class="link" href="https://radio.indymedia.pt/public/paralelo/schedule">Horários</a>
+          
     </div>
     
     <!-- Social Links -->
@@ -161,6 +162,9 @@
         <a class="social-link" href="https://www.facebook.com/RadioParalelo">📘</a>
         <a class="social-link" href="https://www.instagram.com/radioparalelo/">📸</a>
     </div>
+    
+    
+    
     <!-- RSS Feed Section -->
     <div class="rss-feed" id="rssFeed">
         <p id="loadingMessage">Loading RSS feed...</p>
