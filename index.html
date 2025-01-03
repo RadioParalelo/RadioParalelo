@@ -8,8 +8,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #000000; /* Dark background (black) */
-            color: #fff; /* Light text (white) */
+            background-color: #111;
+            color: #f8f8f8;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,149 +17,150 @@
             min-height: 100vh;
             text-align: center;
             padding: 10px;
-            position: relative;
         }
 
-        /* Header styling */
         h1 {
             font-size: 40px;
-            color: #9e1b32; /* Dark Red */
-            text-shadow: 2px 2px 5px #000; /* Dark shadow for contrast */
+            color: #f8f8f8;
             margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h3 {
             font-size: 16px;
-            color: #1b5e20; /* Dark Green */
-            text-shadow: 1px 1px 3px #000; /* Dark shadow for contrast */
-            margin-bottom: 10px;
+            color: #ccc;
+            margin-bottom: 20px;
         }
 
-        /* Logo styling */
         .logo {
             width: 150px;
-            margin: 15px auto;
+            margin: 20px auto;
         }
 
-        /* Links styling */
-        .link, .banner {
+        .iframe-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .iframe-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .iframe-box label {
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #f8f8f8;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: 1px solid #444;
+        }
+
+        .button {
             display: inline-block;
-            color: #fff; /* White text */
+            color: #f8f8f8;
             text-decoration: none;
-            padding: 8px 16px;
-            margin: 3px;
-            border: 1px solid #333; /* Dark border */
-            background-color: #1c1c1c; /* Dark background */
-            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #f8f8f8;
+            background-color: #333;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
 
-        .banner {
-            font-size: 16px;
-            font-weight: bold;
-            border-color: #9e1b32; /* Dark red border */
+        .button:hover {
+            background-color: #f8f8f8;
+            color: #111;
+            border-color: #f8f8f8;
         }
 
-        .link {
-            font-size: 16px;
-            border-color: #1b5e20; /* Dark green border */
-        }
-
-        /* Hover effects */
-        .banner:hover, .link:hover {
-            background-color: #333; /* Dark background on hover */
-            color: #fff;
-            border-color: #fff; /* White border on hover */
-        }
-
-        /* Social icons */
         .social-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .social-link {
-            font-size: 26px;
+            font-size: 20px;
             margin: 5px;
-        }
-      
-
-        footer {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #888;
+            color: #f8f8f8;
+            text-decoration: none;
         }
 
-        /* Adaptive iframe styling */
-        iframe {
-            width: 100%; 
-            max-width: 400px; /* Maximum width for better scaling */
+        .social-link:hover {
+            color: #ccc;
         }
 
-        /* Make the buttons smaller */
-        .link {
-            font-size: 15px;
-            padding: 6px 12px;
-        }
-   
         .rss-feed {
+            background-color: #333;
             padding: 20px;
             margin-top: 30px;
             border-radius: 5px;
+            border: 1px solid #555;
+            text-align: left;
+            width: 100%;
+            max-width: 900px;
         }
 
         .rss-feed a {
-            color: #1b5e20;  /* Dark Red link color */
+            color: #f8f8f8;
             font-size: 16px;
             text-decoration: none;
         }
 
         .rss-feed a:hover {
-            color: #fff;  /* Lighter red for hover effect */
+            text-decoration: underline;
         }
 
         .rss-item {
             margin-bottom: 10px;
         }
 
+        footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
     <h1>Rádio Paralelo</h1>
     <h3>A partir montras desde 2016!</h3>
-    
+
     <a href="/">
         <img class="logo" src="https://raw.githubusercontent.com/RadioParalelo/RadioParalelo/refs/heads/main/web/RadioParalelo-BlackStar.png" alt="Rádio Paralelo Logo">
     </a>
-    
-    <!-- Audio Player (Azuracast) -->
-    <iframe src="https://paralelo.indymedia.pt/public/paralelo/embed?theme=dark" frameborder="0" allowtransparency="true"></iframe>
-    <!-- Audio Player (Libretime) -->
-    <iframe frameborder="0" width="280" height="216" src="https://radioparalelo.indymedia.pt/embed/player?stream=auto&title=Now Playing"></iframe>    
-    
-    <a class="banner" href="https://paralelo.indymedia.pt/public/paralelo/dj">Livestream + DJ</a>
-    
-    <div>
-        <a class="link" href="https://paralelo.indymedia.pt/listen/paralelo/radio.mp3">MP3 Stream</a>
-        <a class="link" href="https://paralelo.indymedia.pt/radio.mp3.xspf">XSPF Playlist</a>
-        
-      
-    </div>
-    
-    <div>
-        <a class="link" href="https://paralelo.indymedia.pt/login">Estúdio</a>
-        <a class="link" href="https://paralelo.indymedia.pt/public/paralelo/ondemand">On Demand</a>
-        <a class="link" href="https://paralelo.indymedia.pt/public/paralelo/schedule">Horários</a>
-        <a class="link" href="https://bafkreihkosces6bs7rwxngag2zdtemdj4tv5fddq2ky5udhgfgbaeooksi.ipfs.w3s.link/">IPFS</a>
 
-    
-          
+    <div class="iframe-container">
+        <div class="iframe-box">
+            <label for="stream1">Stream 1</label>
+            <iframe id="stream1" src="https://paralelo.indymedia.pt/public/paralelo/embed?theme=dark" frameborder="0"></iframe>
+        </div>
+        <div class="iframe-box">
+            <label for="stream2">Stream 2</label>
+            <iframe id="stream2" src="https://radioparalelo.indymedia.pt/embed/player?stream=auto&title=Now Playing" frameborder="0"></iframe>
+        </div>
     </div>
-    
-    <!-- Social Links -->
+
+    <div>
+        <a class="button" href="https://bafkreihkosces6bs7rwxngag2zdtemdj4tv5fddq2ky5udhgfgbaeooksi.ipfs.w3s.link/">IPFS</a>
+    </div>
+
     <div class="social-links">
         <a class="social-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=rss">🛜</a>
         <a class="social-link" href="https://kolektiva.social/@paralelo">🐘</a>
@@ -168,39 +169,29 @@
         <a class="social-link" href="https://www.facebook.com/RadioParalelo">📘</a>
         <a class="social-link" href="https://www.instagram.com/radioparalelo/">📸</a>
     </div>
-    
-    
-    
-    <!-- RSS Feed Section -->
+
     <div class="rss-feed" id="rssFeed">
         <p id="loadingMessage">Loading RSS feed...</p>
-        <!-- RSS items will load here -->
     </div>
 
     <script>
         const loadingMessage = document.getElementById("loadingMessage");
         const feedUrl = "https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html";
 
-        // Fetch the HTML content from the RSS feed
         fetch(feedUrl)
-            .then(response => response.text())  // Get the response as text (HTML)
+            .then(response => response.text())
             .then(html => {
-                // Create a temporary DOM element to parse the HTML response
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
 
-                // Find the RSS items (articles) from the HTML
-                const articles = doc.querySelectorAll('.flux_content');  // Assuming each article has this class
-
+                const articles = doc.querySelectorAll('.flux_content');
                 let output = '';
 
-                // Loop through each article and extract title and link
                 articles.forEach(article => {
                     const titleElement = article.querySelector('.title a');
                     const link = titleElement ? titleElement.href : '';
                     const title = titleElement ? titleElement.textContent : 'No title';
 
-                    // Generate the simplified output with only title and link
                     output += `
                         <div class="rss-item">
                             <a href="${link}" target="_blank">${title}</a>
@@ -208,26 +199,14 @@
                     `;
                 });
 
-                // Insert the content into the page and hide the loading message
                 document.getElementById('rssFeed').innerHTML = output;
-                loadingMessage.style.display = 'none';  // Hide the loading message once the feed is ready
+                loadingMessage.style.display = 'none';
             })
             .catch(err => {
                 console.log("Error fetching the RSS feed:", err);
                 loadingMessage.textContent = "Failed to load the RSS feed.";
             });
     </script>
-
-    <!-- Mastodon Embed Block -->
-    <blockquote class="mastodon-embed" data-embed-url="https://kolektiva.social/@paralelo/113334896780380987/embed" style="background: #FCF8FF; border-radius: 8px; border: 1px solid #C9C4DA; margin: 0; max-width: 540px; min-width: 270px; overflow: hidden; padding: 0;"> 
-        <a href="https://kolektiva.social/@paralelo/113334896780380987" target="_blank" style="align-items: center; color: #1C1A25; display: flex; flex-direction: column; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Roboto, sans-serif; font-size: 14px; justify-content: center; letter-spacing: 0.25px; line-height: 20px; padding: 24px; text-decoration: none;"> 
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 79 75"><path d="..."/></svg> 
-            <div style="color: #787588; margin-top: 16px;">Post by @paralelo@kolektiva.social</div> 
-            <div style="font-weight: 500;">View on Mastodon</div> 
-        </a> 
-    </blockquote> 
-    <script data-allowed-prefixes="https://kolektiva.social/" async src="https://kolektiva.social/embed.js"></script>
-
 
     <footer>
         <p>🄯 Rádio Paralelo ((( ⓘ ))) radio.indymedia.pt</p>
