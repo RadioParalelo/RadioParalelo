@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rádio Paralelo</title>
+    <!-- Add FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -12,55 +14,127 @@
             color: #f8f8f8;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+        /* Header Styling */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .header img {
+            width: 100px; /* Logo size */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .header .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
             letter-spacing: 2px;
+            text-align: left;
         }
 
-        h3 {
-            font-size: 18px;
+        .header h3 {
+            font-size: 20px;
             color: #ccc;
-            margin-bottom: 20px;
+            margin: 5px 0;
+            text-align: left;
         }
 
-        .logo {
-            width: 150px;
-            margin: 20px auto;
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f8f8f8;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+
+        /* Main container for content */
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-column, .right-column {
+                max-width: 100%;
+            }
         }
 
         .iframe-container {
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
             width: 100%;
-            max-width: 900px;
+            overflow: hidden;
         }
 
-        iframe {
-            width: 100%;
-            height: 250px;
+        .audio-player {
+            width: 280px;
+            height: 216px;
             border: none;
-            max-width: 280px;
         }
 
-        .links-container, .social-links {
+        .mastodon-widget-container {
+            width: 100%;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mastodon-widget {
+            width: 500px;
+            height: 800px;
+            border: none;
+        }
+
+        .links-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
-            gap: 15px; /* Adds consistent spacing between links */
+            gap: 15px;
         }
 
-        .text-link, .social-link {
+        .text-link {
             font-size: 16px;
             color: #f8f8f8;
             text-decoration: none;
@@ -69,15 +143,11 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        .text-link:hover, .social-link:hover {
+        .text-link:hover {
             color: #ccc;
         }
 
-        .social-link {
-            font-size: 18px;
-        }
-
-        .arquivo-sonoro, .rede-radios {
+        .arquivo-sonoro, .rede-radios, .cadenazo-radial {
             font-size: 18px;
             font-weight: bold;
             color: #f8f8f8;
@@ -85,13 +155,13 @@
             text-align: center;
         }
 
-        .arquivo-sonoro a, .rede-radios a {
+        .arquivo-sonoro a, .rede-radios a, .cadenazo-radial a {
             color: #f8f8f8;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .arquivo-sonoro a:hover, .rede-radios a:hover {
+        .arquivo-sonoro a:hover, .rede-radios a:hover, .cadenazo-radial a:hover {
             color: #ccc;
         }
 
@@ -99,10 +169,11 @@
             font-size: 16px;
             color: #f8f8f8;
             margin-top: 20px;
+            text-align: left;
         }
 
         .email-container a {
-            color: #f8f8f8; /* No blue color for email link */
+            color: #f8f8f8;
             text-decoration: none;
             font-weight: bold;
         }
@@ -115,58 +186,65 @@
             margin-top: 30px;
             font-size: 12px;
             color: #888;
+            text-align: center;
         }
-
     </style>
 </head>
 <body>
 
-    <h1>Rádio Paralelo</h1>
-
-    <a href="/">
-        <img class="logo" src="https://raw.githubusercontent.com/RadioParalelo/RadioParalelo/refs/heads/main/web/RadioParalelo-BlackStar.png" alt="Rádio Paralelo Logo">
-    </a>
-
-    <h3>A partir montras desde 2016!</h3>
-
-    <div class="iframe-container">
-        <iframe src="https://radioparalelo.indymedia.pt/embed/player?stream=auto&title=Now Playing"></iframe>
+    <!-- Header with Logo, Title, Subtitle, and Social Icons -->
+    <div class="header">
+        <img src="https://github.com/RadioParalelo/RadioParalelo/blob/main/web/paralelologoblackstartransparente.png?raw=true" alt="Rádio Paralelo Logo">
+        <div class="text">
+            <h1>Rádio Paralelo</h1>
+            <h3>A partir montras desde 2016!</h3>
+        </div>
+        <div class="social-icons">
+            <!-- FontAwesome Icons for Social Links -->
+            <a href="https://kolektiva.social/@paralelo" target="_blank" rel="me" class="fab fa-mastodon"></a> <!-- Mastodon -->
+            <a href="https://t.me/s/radioparalelo" target="_blank" class="fab fa-telegram"></a> <!-- Telegram -->
+            <a href="https://www.facebook.com/RadioParalelo" target="_blank" class="fab fa-facebook-f"></a> <!-- Facebook -->
+            <a href="https://www.instagram.com/radioparalelo/" target="_blank" class="fab fa-instagram"></a> <!-- Instagram -->
+        </div>
     </div>
 
-    <div class="links-container">
-        <a class="text-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html">RSS</a>
-        <a class="text-link" href="https://radioparalelo.indymedia.pt:8443/main.ogg">Audio Stream</a>
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Left Column with Audio Player and Links -->
+        <div class="left-column">
+            <div class="iframe-container">
+                <iframe class="audio-player" src="https://radioparalelo.indymedia.pt/embed/player?stream=auto&title=Now Playing"></iframe>
+            </div>
+            <div class="links-container">
+                <a class="text-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html">RSS</a>
+                <a class="text-link" href="https://radioparalelo.indymedia.pt:8443/main.ogg">Audio Stream</a>
+            </div>
+            <div class="arquivo-sonoro">
+                <a href="https://archive.org/details/@r_dio_paralelo_porto">Arquivo sonoro</a>
+            </div>
+            <div class="rede-radios">
+                <a href="https://mapa.liberaturadio.org/">Mapa de Radios Independentes</a>
+            </div>
+            <div class="cadenazo-radial">
+                <a href="https://animalesenfu.ga/notes/a443upyviw7lmjjf">Cadenazo Radial Anti-extractivista</a><br>
+                <span>28/02/2025</span>
+            </div>
+        </div>
+
+        <!-- Right Column with Mastodon Widget -->
+        <div class="right-column">
+            <div class="mastodon-widget-container">
+                <iframe class="mastodon-widget" allowfullscreen sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox" 
+                    src="https://mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fkolektiva.social%2Fusers%2Fparalelo&theme=dark&size=90&header=true&replies=false&boosts=true">
+                </iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="arquivo-sonoro">
-        <a href="https://archive.org/details/@r_dio_paralelo_porto">Arquivo sonoro</a>
-    </div>
-
-    <div class="rede-radios">
-        <a href="https://mapa.liberaturadio.org/">Rede de Radios Comunitarias - Libera Tu Radio</a>
-    </div>
-
-    <div class="social-links">
-        <a class="social-link" href="https://kolektiva.social/@paralelo" rel="me">Mastodon</a>
-        <a class="social-link" href="https://t.me/s/radioparalelo">Telegram</a>
-        <a class="social-link" href="https://www.facebook.com/RadioParalelo">Facebook</a>
-        <a class="social-link" href="https://www.instagram.com/radioparalelo/">Instagram</a>
-    </div>
-
-    <div class="email-container">
-        <a href="mailto:paralelo@riseup.net">paralelo@riseup.net</a>
-    </div>
-
-<!-- Mastodon Widget -->
-<div class="iframe-container">
-    <iframe allowfullscreen sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox" 
-        width="500" height="800" 
-        src="https://mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fkolektiva.social%2Fusers%2Fparalelo&theme=dark&size=90&header=true&replies=false&boosts=true">
-    </iframe>
-</div>
-    
+    <!-- Footer Section -->
     <footer>
-        <p>🄯 Rádio Paralelo ((( ⓘ ))) radio.indymedia.pt</p>
+        <p>((( ⓘ ))) radio.indymedia.pt</p>
+        <p>paralelo@riseup.net</p>
     </footer>
 
 </body>
