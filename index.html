@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rádio Paralelo</title>
-    <!-- Add FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add ForkAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css">
     <style>
         body {
             margin: 0;
@@ -25,6 +25,7 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow wrapping of header items on small screens */
         }
 
         .header img {
@@ -36,6 +37,7 @@
         .header .text {
             display: flex;
             flex-direction: column;
+            flex-grow: 1; /* Allow the text section to grow and take available space */
         }
 
         .header h1 {
@@ -56,6 +58,8 @@
         .social-icons {
             display: flex;
             gap: 15px;
+            justify-content: flex-end;
+            margin-left: 20px;
         }
 
         .social-icons a {
@@ -92,6 +96,21 @@
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start; /* Stack title and social links vertically */
+                margin-bottom: 20px;
+            }
+
+            .header img {
+                margin-bottom: 20px;
+            }
+
+            .social-icons {
+                justify-content: flex-start;
+                margin-top: 10px;
             }
 
             .left-column, .right-column {
@@ -147,7 +166,7 @@
             color: #ccc;
         }
 
-        .arquivo-sonoro, .rede-radios, .cadenazo-radial {
+        .rede-radios, .cadenazo-radial {
             font-size: 18px;
             font-weight: bold;
             color: #f8f8f8;
@@ -155,13 +174,13 @@
             text-align: center;
         }
 
-        .arquivo-sonoro a, .rede-radios a, .cadenazo-radial a {
+        .rede-radios a, .cadenazo-radial a {
             color: #f8f8f8;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .arquivo-sonoro a:hover, .rede-radios a:hover, .cadenazo-radial a:hover {
+        .rede-radios a:hover, .cadenazo-radial a:hover {
             color: #ccc;
         }
 
@@ -200,11 +219,13 @@
             <h3>A partir montras desde 2016!</h3>
         </div>
         <div class="social-icons">
-            <!-- FontAwesome Icons for Social Links -->
-            <a href="https://kolektiva.social/@paralelo" target="_blank" rel="me" class="fab fa-mastodon"></a> <!-- Mastodon -->
-            <a href="https://t.me/s/radioparalelo" target="_blank" class="fab fa-telegram"></a> <!-- Telegram -->
-            <a href="https://www.facebook.com/RadioParalelo" target="_blank" class="fab fa-facebook-f"></a> <!-- Facebook -->
-            <a href="https://www.instagram.com/radioparalelo/" target="_blank" class="fab fa-instagram"></a> <!-- Instagram -->
+            <!-- ForkAwesome Icons for Social Links -->
+            <a href="https://kolektiva.social/@paralelo" target="_blank" rel="me" class="fa fa-mastodon"></a> <!-- Mastodon -->
+            <a href="https://t.me/s/radioparalelo" target="_blank" class="fa fa-telegram"></a> <!-- Telegram -->
+            <a href="https://www.facebook.com/RadioParalelo" target="_blank" class="fa fa-facebook-f"></a> <!-- Facebook -->
+            <a href="https://www.instagram.com/radioparalelo/" target="_blank" class="fa fa-instagram"></a> <!-- Instagram -->
+            <!-- Internet Archive Link with ForkAwesome Icon -->
+            <a href="https://archive.org/details/@r_dio_paralelo_porto" target="_blank" class="fa fa-archive-org"></a> <!-- Internet Archive -->
         </div>
     </div>
 
@@ -219,15 +240,12 @@
                 <a class="text-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html">RSS</a>
                 <a class="text-link" href="https://radioparalelo.indymedia.pt:8443/main.ogg">Audio Stream</a>
             </div>
-            <div class="arquivo-sonoro">
-                <a href="https://archive.org/details/@r_dio_paralelo_porto">Arquivo sonoro</a>
-            </div>
             <div class="rede-radios">
-                <a href="https://mapa.liberaturadio.org/">Mapa de Radios Independentes</a>
+                <a href="https://mapa.liberaturadio.org/">Libera tu Radio: Mapa da Rede de Radios Comunitarias y Software Libre</a>
             </div>
             <div class="cadenazo-radial">
-                <a href="https://animalesenfu.ga/notes/a443upyviw7lmjjf">Cadenazo Radial Anti-extractivista</a><br>
-                <span>28/02/2025</span>
+                <a href="https://animalesenfu.ga/notes/a443upyviw7lmjjf">28/02/2025 - CADENAZO RADIAL ANTIEXTRACTIVISTA</a><br>
+                <span>por la liberación animal, de la tierra y humana. </span>
             </div>
         </div>
 
