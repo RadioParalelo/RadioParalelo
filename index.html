@@ -1,15 +1,3 @@
-<?php
-// Fetch the RSS feed from the provided URL
-$rss_url = 'https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=rss';
-$rss = simplexml_load_file($rss_url);
-
-// Check if RSS was loaded successfully
-if ($rss === false) {
-    echo "Error loading RSS feed.";
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,35 +200,32 @@ if ($rss === false) {
             text-align: center;
         }
 
-        .rss-feed-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 20px;
-            width: 100%;
+        /* RSS Feed Styling */
+        .rss-feed {
+            margin-top: 40px;
             padding: 20px;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #222;
+            border-radius: 10px;
+            max-width: 100%;
+            width: 100%;
         }
 
-        .rss-feed-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
+        .rss-feed ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .rss-feed-item a {
+        .rss-feed li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .rss-feed a {
             color: #f8f8f8;
             text-decoration: none;
-            font-weight: bold;
         }
 
-        .rss-feed-item a:hover {
-            color: #ccc;
-        }
-
-        .rss-feed-item p {
+        .rss-feed a:hover {
             color: #ccc;
         }
     </style>
@@ -273,9 +258,8 @@ if ($rss === false) {
                     Your browser does not support the audio element.
                 </audio>
             </div>
-
+            
             <div class="links-container">
-                <a class="text-link" href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html">RSS</a>
                 <a class="text-link" href="https://radios.yanapak.org/radioparalelo">Audio Stream</a>
             </div>
             <div class="rede-radios">
@@ -295,19 +279,12 @@ if ($rss === false) {
         </div>
     </div>
 
-    <!-- Display RSS Feed -->
-    <div class="rss-feed-container">
-        <h2>Latest News from Rádio Paralelo</h2>
-
-        <?php
-        // Loop through RSS items and display them
-        foreach ($rss->channel->item as $item) {
-            echo '<div class="rss-feed-item">';
-            echo '<a href="' . $item->link . '" target="_blank">' . $item->title . '</a>';
-            echo '<p>' . $item->description . '</p>';
-            echo '</div>';
-        }
-        ?>
+    <!-- RSS Feed -->
+    <div class="rss-feed" id="rss-feed">
+        <h2>Latest Posts</h2>
+        <div id="rss-content">
+            <!-- RSS items with embedded content will be inserted here -->
+        </div>
     </div>
 
     <!-- Footer -->
@@ -315,6 +292,19 @@ if ($rss === false) {
         <p>((( ⓘ ))) radio.indymedia.pt</p>
         <p>paralelo@riseup.net</p>
     </footer>
+
+    <script>
+        // Fetch HTML feed and display it
+        fetch('https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html')
+            .then(response => response.text())
+            .then(html => {
+                const rssContent = document.getElementById('rss-content');
+                rssContent.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching HTML feed:', error);
+            });
+    </script>
 
 </body>
 </html>
