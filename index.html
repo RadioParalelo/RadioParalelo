@@ -199,6 +199,28 @@
             color: #888;
             text-align: center;
         }
+        
+        #greader-feed-container {
+            margin-top: 30px;
+        }
+
+        #greader-feed ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #greader-feed ul li {
+            margin: 5px 0;
+        }
+
+        #greader-feed ul li a {
+            text-decoration: none;
+            color: #f8f8f8;
+        }
+
+        #greader-feed ul li a:hover {
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +264,13 @@
                 <a href="https://lazarzamora.cl/cadenazo-radial-antiextractivista">28/02/2025 - CADENAZO RADIAL ANTIEXTRACTIVISTA</a><br>
                 <span>por la liberación animal, de la tierra y humana.</span>
             </div>
+               
+            <!-- GReader Feed -->
+            <div id="greader-feed-container">
+                <h2>Latest Updates</h2>
+                <div id="greader-feed"></div>
+            </div>
+        </div>
             </div>
 
         <!-- Right Column (Mastodon) -->
@@ -257,6 +286,35 @@
         <p>((( ⓘ ))) radio.indymedia.pt</p>
         <p>paralelo@riseup.net</p>
     </footer>
+
+    
+    <!-- JavaScript to Fetch and Display GReader JSON -->
+    <script type="text/javascript">
+        function fetchAndDisplayGReader() {
+            const feedUrl = 'https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=greader';
+
+            fetch(feedUrl)
+                .then(response => response.json()) // Get the JSON data from GReader
+                .then(data => {
+                    const items = data.items;
+
+                    let output = "<ul>"; // Start an unordered list for the feed
+
+                    items.forEach(item => {
+                        const title = item.title;
+                        const link = item.url;
+                        output += `<li><a href="${link}" target="_blank">${title}</a></li>`;
+                    });
+
+                    output += "</ul>"; // End the list
+                    document.getElementById("greader-feed").innerHTML = output; // Insert the list into the page
+                })
+                .catch(error => console.error('Error fetching GReader feed:', error)); // Handle errors
+        }
+
+        window.onload = fetchAndDisplayGReader; // Fetch and display the feed when the page loads
+    </script>
+
 
 </body>
 </html>
