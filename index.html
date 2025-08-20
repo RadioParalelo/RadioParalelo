@@ -153,43 +153,6 @@
       border: none;
     }
 
-    .rss-feed {
-      margin: 40px 20px;
-      padding: 20px;
-      background-color: #222;
-      border-radius: 10px;
-      max-width: 100%;
-    }
-
-    #rss-content {
-      max-height: 500px;
-      overflow-y: auto;
-    }
-
-    #rss-content * {
-      font-family: inherit;
-      color: #f8f8f8;
-      background-color: transparent !important;
-      border: none !important;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    #rss-content a {
-      color: #f8f8f8;
-      text-decoration: underline;
-    }
-
-    #rss-content a:hover {
-      color: #ccc;
-    }
-
-    #rss-content p,
-    #rss-content div {
-      margin-bottom: 10px;
-    }
-
     footer {
       margin: 40px 0 20px;
       text-align: center;
@@ -230,6 +193,7 @@
       <a href="https://www.facebook.com/RadioParalelo" target="_blank" class="fa fa-facebook-f"></a>
       <a href="https://www.instagram.com/radioparalelo/" target="_blank" class="fa fa-instagram"></a>
       <a href="https://archive.org/details/@r_dio_paralelo_porto" target="_blank" class="fa fa-archive-org"></a>
+      <a href="https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=rss" target="_blank" class="fa fa-rss"></a>
     </div>
   </div>
 
@@ -265,28 +229,10 @@
     </div>
   </div>
 
-  <div class="rss-feed" id="rss-feed">
-    <h2>Últimos Posts</h2>
-    <div id="rss-content"></div>
-  </div>
-
   <footer>
     <p>((( ⓘ ))) radio.indymedia.pt</p>
     <p>paralelo@riseup.net</p>
   </footer>
 
-  <script>
-    fetch('https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=html')
-      .then(response => response.text())
-      .then(html => {
-        const rssContent = document.getElementById('rss-content');
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = html;
-        rssContent.appendChild(wrapper);
-      })
-      .catch(error => {
-        console.error('Error loading RSS feed:', error);
-      });
-  </script>
 </body>
 </html>
