@@ -24,7 +24,9 @@
 🏛️ [Arquivo](https://archive.org/details/@r_dio_paralelo_porto) 
 🛜 [RSS](https://rss.zdx.fr/api/query.php?user=radioparalelo&t=bc598c7f195190354da8e14fc0686fac&f=rss)
 
-
+Mapa da Rede de Radios Livres: [Libera Tu Radio](https://mapa.liberaturadio.org/)
+[Cadenazo Radial Anti-Extrativista](https://lazarzamora.cl/cadenazo-radial-antiextractivista)
+   
 ~~- [Entra agora ao vivo]~~ (Não funcional)
 
 ### Redes Sociais
