@@ -1,6 +1,10 @@
 ### Rádio Paralelo
 ### A partir montras desde 2016!
 
+<div style="width:200px;">
+  <img src="https://raw.githubusercontent.com/RadioParalelo/RadioParalelo/refs/heads/main/web/RadioParalelo-BlackStar.png" alt="Rádio Paralelo Logo" style="width:20%; height:auto;">
+</div>
+
 [Página principal](https://radio.indymedia.pt/)
 
 Ouve a rádio aqui: [OGG Audio Stream](https://radioparalelo.indymedia.pt:8443/main.ogg)
