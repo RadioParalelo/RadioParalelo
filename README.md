@@ -1,17 +1,5 @@
-## Olá 👋
-
-## Esta página contém o código fonte da página principal da Rádio Paralelo
-
-.Podes editar o código e submeter as alterações
-.Se quiseres colaborar connosco ou tiveres alguma questão podes contactar-nos através do mastodon ou por email
-
 ### Rádio Paralelo
-#### RADIO.INDYMEDIA.PT
-
 ### A partir montras desde 2016!
-
-
-### Rádio Paralelo
 
 [Página principal](https://radio.indymedia.pt/)
 
@@ -44,7 +32,7 @@ Leitores (p.e. VLC)
 - [xspf](https://radioparalelo.indymedia.pt:8443/main.ogg.xspf)
 
 
-
+#### RADIO.INDYMEDIA.PT
 ((( ⓘ ))) 
 paralelo@riseup.net
 🄯 Rádio Paralelo 
