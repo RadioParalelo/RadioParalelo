@@ -7,7 +7,7 @@
 
 [Página principal](https://radio.indymedia.pt/)
 
-Ouve a rádio aqui: [OGG Audio Stream](https://radioparalelo.indymedia.pt:8443/main.ogg)
+🎵 Ouve a rádio aqui: [OGG Audio Stream](https://radioparalelo.indymedia.pt:8443/main.ogg)
 
 [Estúdio](https://radioparalelo.indymedia.pt)
 
